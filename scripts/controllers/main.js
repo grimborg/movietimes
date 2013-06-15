@@ -29,7 +29,7 @@ function days_between(date1, date2) {
 
 }
 
-var DAY_NAMES = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+var DAY_NAMES = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 
 angular.module('yApp')
 .controller('MainCtrl', function ($scope, $http) {
