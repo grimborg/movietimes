@@ -33,7 +33,7 @@ var DAY_NAMES = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturd
 
 angular.module('yApp')
 .controller('MainCtrl', function ($scope, $http) {
-   $http.get('/bytime.json').success(function(data) {
+   $http.get('bytime.json').success(function(data) {
       var today = getDate();
       $scope.movies = data.movies;
       var seen_days = {};
