@@ -6596,10 +6596,12 @@ a.label:hover, a.badge:hover {
   position: fixed;
 }
 
-/* line 2, ../../app/styles/main.scss */
-body {
-  padding-top: 60px;
-  padding-bottom: 40px;
+@media screen and (max-width: 800px) {
+  /* line 2, ../../app/styles/main.scss */
+  body {
+    padding-top: 120px !important;
+    padding-bottom: 40px;
+  }
 }
 
 /*
@@ -8026,12 +8028,12 @@ body {
     overflow: visible !important;
   }
 }
-/* line 7, ../../app/styles/main.scss */
+/* line 10, ../../app/styles/main.scss */
 .navbar-form > .btn-group {
   margin-left: 5px;
 }
 
-/* line 10, ../../app/styles/main.scss */
+/* line 13, ../../app/styles/main.scss */
 .navbar {
   position: fixed !important;
 }
