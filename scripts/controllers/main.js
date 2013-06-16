@@ -22,14 +22,15 @@ function days_between(date1, date2) {
     var date2_ms = date2.getTime()
 
     // Calculate the difference in milliseconds
-    var difference_ms = Math.abs(date1_ms - date2_ms)
+    var difference_ms = date2_ms - date1_ms
 
     // Convert back to days and return
     return Math.round(difference_ms/ONE_DAY)
 
 }
 
-var DAY_NAMES = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+//var DAY_NAMES = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+var DAY_NAMES = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
 angular.module('yApp')
 .controller('MainCtrl', function ($scope, $http) {
@@ -45,8 +46,12 @@ angular.module('yApp')
             movie.dayname = 'today';
          } else {
             var diff = days_between(new Date(today), new Date(movie.date));
+            console.log(movie.date, diff);
             if (diff === 1) {
                movie.dayname = 'tomorrow';
+            } else if (today > movie.date) {
+                console.log(movie.date);
+                movie.dayname = 'yesterday';
             } else {
                movie.dayname = DAY_NAMES[(new Date(movie.date)).getDay()];
             }
