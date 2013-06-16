@@ -8030,3 +8030,8 @@ body {
 .navbar-form > .btn-group {
   margin-left: 5px;
 }
+
+/* line 10, ../../app/styles/main.scss */
+.navbar {
+  position: fixed !important;
+}
