@@ -32,6 +32,7 @@ angular.module('yApp')
       $scope.days = ['Any day'];
       $scope.chosenDay = {model : 'Any day'};
       $scope.chosenCinema = {model : 'Anywhere'};
+      $scope.chosenMovie = {model : undefined};
       angular.forEach($scope.movies, function (movie) {
          if (movie.date === today) {
             movie.dayname = 'today';
@@ -61,7 +62,10 @@ angular.module('yApp')
    $scope.inSelectedDay = function (movie) {
       return $scope.chosenDay.model === 'Any day' || movie.dayname === $scope.chosenDay.model;
    }
+   $scope.isSelectedMovie = function (movie) {
+       return $scope.chosenMovie.model == undefined || movie.title === $scope.chosenMovie.model;
+   }
    $scope.movieFilter = function (movie) {
-      return $scope.inSelectedCinemas(movie) && $scope.inSelectedDay(movie);
+      return $scope.inSelectedCinemas(movie) && $scope.inSelectedDay(movie) && $scope.isSelectedMovie(movie);
    }
 });

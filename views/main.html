@@ -8,6 +8,8 @@
             <button ng-repeat="day in days" type="button" class="btn btn-info"
                 ng-model="chosenDay.model" btn-radio="day">{{day}}</button>
         </div>
+        <button ng-show="chosenMovie.model != undefined" type="button" class="btn btn-danger"
+            ng-click="chosenMovie.model = undefined">{{chosenMovie.model}}</button>
     </div>
 
 </div>
@@ -30,8 +32,13 @@
                         </a>
                         <span ng-show="movie.3d" class="badge badge-info">3D</span>
                     </td>
-                    <td>{{movie.title}}</td>
-                    <td ng-show="chosenCinema.model == 'Anywhere'">{{movie.cinema}}</td>
+                    <td>
+                        <button ng-disabled="chosenMovie.model != undefined" class="btn btn-link" ng-click="chosenMovie.model =
+                            movie.title">{{movie.title}}</button></td>
+                    <td ng-show="chosenCinema.model == 'Anywhere'">
+                        <button class="btn btn-link" ng-click="chosenCinema.model = movie.cinema">
+                            {{movie.cinema}}</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
