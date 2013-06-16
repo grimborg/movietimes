@@ -3,12 +3,12 @@
         <a class="brand" href="#">Where & When?</a>
         <div class="btn-group">
             <button ng-repeat="cinema in cinemas" type="button" class="btn btn-primary"
-               ng-model="chosenCinema.model" btn-radio="cinema">{{cinema}}</button>
-         </div>
+                ng-model="chosenCinema.model" btn-radio="cinema">{{cinema}}</button>
+        </div>
         <div class="btn-group">
             <button ng-repeat="day in days" type="button" class="btn btn-info"
-               ng-model="chosenDay.model" btn-radio="day">{{day}}</button>
-         </div>
+                ng-model="chosenDay.model" btn-radio="day">{{day}}</button>
+        </div>
     </div>
 
 </div>
@@ -25,9 +25,12 @@
             </thead>
             <tbody>
                 <tr ng-repeat="movie in movies | filter:movieFilter">
-                   <td>{{movie.time}} <span class="label label-info" ng-show="chosenDay.model == 'All' && movie.dayname != 'today'">{{movie.dayname}}</span></td>
-                   <td><a href="{{movie.imdb_uri}}"><span class="badge
-                           badge-warning">{{movie.info.rating}}</span></a></td>
+                    <td>{{movie.time}} <span class="label label-info" ng-show="chosenDay.model == 'All' && movie.dayname != 'today'">{{movie.dayname}}</span></td>
+                    <td><a href="{{movie.imdb_uri}}"><span class="badge
+                                badge-warning">{{movie.info.rating}}</span>
+                        </a>
+                        <span ng-show="movie.3d" class="badge badge-info">3D</span>
+                    </td>
                     <td>{{movie.title}}</td>
                     <td>{{movie.cinema}}</td>
                 </tr>
