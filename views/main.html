@@ -30,11 +30,12 @@
                     <td><a href="{{movie.imdb_uri}}"><span class="badge
                                 badge-warning">{{movie.info.rating}}</span>
                         </a>
-                        <span ng-show="movie.3d" class="badge badge-info">3D</span>
                     </td>
                     <td>
                         <button ng-disabled="chosenMovie.model != undefined" class="btn btn-link btn-movie-title" ng-click="chosenMovie.model =
-                            movie.title">{{movie.title}}</button></td>
+                            movie.title">{{movie.title}}
+                        <small class="movie-3d" ng-show="movie.3d">3D</small>
+                    </button></td>
                     <td ng-show="chosenCinema.model == 'Anywhere'">
                         <button class="btn btn-link" ng-click="chosenCinema.model = movie.cinema">
                             {{movie.cinema}}</button>

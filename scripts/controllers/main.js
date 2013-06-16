@@ -47,9 +47,7 @@ angular.module('yApp')
             movie.dayname = 'today';
          } else {
             var diff = days_between(new Date(today), new Date(movie.date));
-            if (diff === 1) {
-               movie.dayname = 'tomorrow';
-            } else if (today > movie.date) {
+            if (today > movie.date) {
                 console.log(movie.date);
                 movie.dayname = 'yesterday';
             } else {
