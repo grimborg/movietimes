@@ -24,8 +24,7 @@
             </thead>
             <tbody>
                 <tr ng-repeat="movie in movies | filter:movieFilter">
-                   <td>{{movie.time}} <span class="label label-info" ng-hide="movie.dayname ==
-                         'today'">{{movie.dayname}}</span></td>
+                   <td>{{movie.time}} <span class="label label-info" ng-show="chosenDay.model == 'All' && movie.dayname != 'today'">{{movie.dayname}}</span></td>
                     <td>{{movie.title}}</td>
                     <td>{{movie.cinema}}</td>
                 </tr>

@@ -13,20 +13,11 @@ var getDate = function() {
 }
 
 function days_between(date1, date2) {
-
-    // The number of milliseconds in one day
     var ONE_DAY = 1000 * 60 * 60 * 24
-
-    // Convert both dates to milliseconds
     var date1_ms = date1.getTime()
     var date2_ms = date2.getTime()
-
-    // Calculate the difference in milliseconds
     var difference_ms = date2_ms - date1_ms
-
-    // Convert back to days and return
     return Math.round(difference_ms/ONE_DAY)
-
 }
 
 //var DAY_NAMES = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
@@ -46,7 +37,6 @@ angular.module('yApp')
             movie.dayname = 'today';
          } else {
             var diff = days_between(new Date(today), new Date(movie.date));
-            console.log(movie.date, diff);
             if (diff === 1) {
                movie.dayname = 'tomorrow';
             } else if (today > movie.date) {
