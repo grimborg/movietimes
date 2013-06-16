@@ -21,13 +21,13 @@
         <table class="table">
             <tbody>
                 <tr ng-repeat="movie in movies | filter:movieFilter" ng-hide="movie.time < curtime">
-                    <td>{{movie.time}}
+                    <td width="3em">{{movie.time}}
                         <span class="label label-info" ng-show="chosenDay.model == 'Any day' && movie.dayname != 'today'"
                             ng-click="chosenDay.model = movie.dayname">
                             {{movie.dayname}}
                         </span>
                     </td>
-                    <td><a href="{{movie.imdb_uri}}"><span class="badge
+                    <td width="3em"><a href="{{movie.imdb_uri}}"><span class="badge
                                 badge-warning">{{movie.info.rating}}</span>
                         </a>
                     </td>
