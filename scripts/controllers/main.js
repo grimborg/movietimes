@@ -29,9 +29,9 @@ angular.module('yApp')
       var today = getDate();
       $scope.movies = data.movies;
       var seen_days = {};
-      $scope.days = ['All'];
-      $scope.chosenDay = {model : 'All'};
-      $scope.chosenCinema = {model : 'All'};
+      $scope.days = ['Any day'];
+      $scope.chosenDay = {model : 'Any day'};
+      $scope.chosenCinema = {model : 'Anywhere'};
       angular.forEach($scope.movies, function (movie) {
          if (movie.date === today) {
             movie.dayname = 'today';
@@ -52,14 +52,14 @@ angular.module('yApp')
          }
       });
       $scope.cinemas = data.cinemas;
-      $scope.cinemas.unshift('All');
+      $scope.cinemas.unshift('Anywhere');
    });
    $scope.times = ['Now', 'This afternoon', 'Tonight'];
    $scope.inSelectedCinemas = function (movie) {
-      return $scope.chosenCinema.model === 'All' || $scope.chosenCinema.model === movie.cinema;
+      return $scope.chosenCinema.model === 'Anywhere' || $scope.chosenCinema.model === movie.cinema;
    };
    $scope.inSelectedDay = function (movie) {
-      return $scope.chosenDay.model === 'All' || movie.dayname === $scope.chosenDay.model;
+      return $scope.chosenDay.model === 'Any day' || movie.dayname === $scope.chosenDay.model;
    }
    $scope.movieFilter = function (movie) {
       return $scope.inSelectedCinemas(movie) && $scope.inSelectedDay(movie);
