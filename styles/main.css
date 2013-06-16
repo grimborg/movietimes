@@ -6596,6 +6596,12 @@ a.label:hover, a.badge:hover {
   position: fixed;
 }
 
+/* line 2, ../../app/styles/main.scss */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
 /*
  * Bootstrap Responsive v2.1.0
  *
@@ -8020,12 +8026,7 @@ a.label:hover, a.badge:hover {
     overflow: visible !important;
   }
 }
-/* line 3, ../../app/styles/main.scss */
-body {
-  padding-top: 40px;
-}
-
-/* line 6, ../../app/styles/main.scss */
+/* line 7, ../../app/styles/main.scss */
 .navbar-form > .btn-group {
   margin-left: 5px;
 }

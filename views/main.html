@@ -19,17 +19,14 @@
 <div class="row-fluid">
     <div class="span12">
         <table class="table">
-            <thead ng-hide="true">
-                <tr>
-                    <th>Time</th>
-                    <th>Rating</th>
-                    <th>Movie</th>
-                    <th ng-show="chosenCinema.model == 'Anywhere'">Cinema</th>
-                </tr>
-            </thead>
             <tbody>
-                <tr ng-repeat="movie in movies | filter:movieFilter">
-                    <td>{{movie.time}} <span class="label label-info" ng-show="chosenDay.model == 'Any day' && movie.dayname != 'today'">{{movie.dayname}}</span></td>
+                <tr ng-repeat="movie in movies | filter:movieFilter" ng-hide="movie.time < curtime">
+                    <td>{{movie.time}}
+                        <span class="label label-info" ng-show="chosenDay.model == 'Any day' && movie.dayname != 'today'"
+                            ng-click="chosenDay.model = movie.dayname">
+                            {{movie.dayname}}
+                        </span>
+                    </td>
                     <td><a href="{{movie.imdb_uri}}"><span class="badge
                                 badge-warning">{{movie.info.rating}}</span>
                         </a>

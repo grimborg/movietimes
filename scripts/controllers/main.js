@@ -1,15 +1,23 @@
 'use strict';
+
+function padded(val) {
+    val = '' + val;
+    if (val.length == 1) val = '0' + val;
+    return val;
+}
+
 var getDate = function() {
    var n = new Date();
-   var month = '' + (n.getMonth() + 1);
-   if (month.length === 1) {
-      month = '0' + month;
-   }
-   var day = '' + n.getDate();
-   if (day.length === 1) {
-      day = '0' + day;
-   }
+   var month = padded(n.getMonth() + 1);
+   var day = padded(n.getDate());
    return '' + n.getFullYear() + '-' + month + '-' + day;
+}
+
+function getTime() {
+    var n = new Date();
+    var hours = padded(n.getHours());
+    var minutes = padded(n.getMinutes());
+    return hours + ':' + minutes;
 }
 
 function days_between(date1, date2) {
@@ -27,6 +35,7 @@ angular.module('yApp')
 .controller('MainCtrl', function ($scope, $http) {
    $http.get('bytime.json').success(function(data) {
       var today = getDate();
+      $scope.curtime = getTime();
       $scope.movies = data.movies;
       var seen_days = {};
       $scope.days = ['Any day'];

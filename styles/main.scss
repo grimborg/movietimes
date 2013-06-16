@@ -1,8 +1,9 @@
 @import "compass_twitter_bootstrap";
-@import "compass_twitter_bootstrap/responsive";
 body {
-    padding-top: 40px;
+    padding-top: 60px;
+    padding-bottom: 40px;
 }
+@import "compass_twitter_bootstrap/responsive";
 .navbar-form > .btn-group {
-  margin-left: 5px;
+    margin-left: 5px;
 }
