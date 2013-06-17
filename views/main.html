@@ -20,7 +20,8 @@
     <div class="span12">
         <table class="table">
             <tbody>
-                <tr ng-repeat="movie in movies | filter:movieFilter" ng-hide="movie.time < curtime">
+                <tr ng-repeat="movie in movies | filter:movieFilter" ng-hide="movie.time < curtime ||
+                    movie.dayname == 'yesterday'">
                     <td width="3em">{{movie.time}}
                         <span class="label label-info" ng-show="chosenDay.model == 'Any day' && movie.dayname != 'today'"
                             ng-click="chosenDay.model = movie.dayname">
